@@ -1,0 +1,248 @@
+/* ============================================================
+   한맥 디자인 시스템 — Design Tokens
+   EG-BIM CAD/BIM Software + 이지빔 웹사이트
+   ============================================================ */
+
+:root {
+  /* ─── Primary Colors ─────────────────────────────────── */
+  --hm-green:  #123328;
+  --hm-brown:  #3E3523;
+
+  /* ─── Accent Colors ──────────────────────────────────── */
+  --hm-orange: #FF5C00;  /* 피그마 확인값 (구 #CC5200) */
+  --hm-yellow: #FFC600;
+
+  /* ─── Neutral Colors ─────────────────────────────────── */
+  --hm-white:       #FFFFFF;
+  --hm-black:       #1A1714;
+  --hm-dark-gray:   #4A4640;
+  --hm-mid-gray:    #888580;
+  --hm-light-gray:  #D4D1CE;
+  --hm-surface:     #F5F3EE;
+
+  /* ─── Semantic Colors ────────────────────────────────── */
+  --hm-success: #1A6B3C;
+  --hm-warning: #B87800;
+  --hm-error:   #CC0000;
+  --hm-info:    #0A4F8C;
+
+  /* ─── Divider / Border ───────────────────────────────── */
+  --hm-divider:    #E8E5DF;  /* 섹션 구분선 (소프트) */
+  --hm-border:     #D0CEC9;  /* 입력 필드, 카드 테두리 (소프트) */
+  --border-tech:   #CFC6AD;  /* 문서 UI 기술 보더 — 웜 베이지 테크 보더 */
+
+  /* ─── Action Derivatives ─────────────────────────────── */
+  --hm-orange-hover:  #E05200;  /* #FF5C00 hover  */
+  --hm-orange-active: #BF4500;  /* #FF5C00 active */
+  --hm-orange-dim:    #994000;  /* #FF5C00 dim    */
+  --hm-green-hover:   #1A4A38;
+  --hm-green-active:  #0E2620;
+
+  /* ─── SW Semantic Tokens ─────────────────────────────── */
+  --solid-arrow:      #47AF91;  /* 화살표 / 포인터 민트그린     */
+  --text-green100:    #F0F7F5;  /* 밝은 그린 서페이스           */
+  --text-green200:    #B6D0C9;  /* 중간 그린 텍스트             */
+  --text-brown100:    #F6F4F2;  /* 밝은 브라운 서페이스         */
+  --text-brown200:    #D4CBBD;  /* 중간 브라운 텍스트           */
+  --text-khaki100:    #D7D2B0;  /* 명령어 LNB 카키 텍스트       */
+  --brown900:         #26221A;  /* 드롭다운 최다크 브라운        */
+  --sw-header-border: #5F4B0F;  /* SW 헤더 상/하단 앰버 구분선  */
+
+  /* ─── Typography ─────────────────────────────────────── */
+  --font-primary: 'Noto Sans KR', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --text-size-display:    40px;
+  --text-size-heading-1:  28px;
+  --text-size-heading-2:  22px;
+  --text-size-heading-3:  18px;
+  --text-size-body-large: 16px;
+  --text-size-body:       14px;
+  --text-size-caption:    12px;
+  --text-size-button:     14px;
+  --text-size-label:      12px;
+
+  --text-weight-display:    700;
+  --text-weight-heading-1:  700;
+  --text-weight-heading-2:  600;
+  --text-weight-heading-3:  600;
+  --text-weight-body-large: 400;
+  --text-weight-body:       400;
+  --text-weight-caption:    400;
+  --text-weight-button:     600;
+  --text-weight-label:      600;
+
+  --text-lh-display:    1.15;
+  --text-lh-heading-1:  1.25;
+  --text-lh-heading-2:  1.30;
+  --text-lh-heading-3:  1.35;
+  --text-lh-body-large: 1.60;
+  --text-lh-body:       1.60;
+  --text-lh-caption:    1.50;
+  --text-lh-button:     1.00;
+  --text-lh-label:      1.40;
+
+  /* ─── Spacing ────────────────────────────────────────── */
+  --space-xxs:   4px;
+  --space-xs:    8px;
+  --space-sm:   12px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-xxl:  48px;
+  --space-xxxl: 64px;
+  --space-xxxxl:80px;
+
+  /* ─── Elevation ──────────────────────────────────────── */
+  --shadow-z0: none;
+  --shadow-z1: 0 1px 4px #C4C1BB;
+  --shadow-z2: 0 4px 12px #B8B4AE;
+  --shadow-z3: 0 8px 24px #A8A49E;
+  --shadow-z4: 0 12px 32px #989490;
+
+  /* ─── Border Radius ──────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:  12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* ─── Icon Size ──────────────────────────────────────── */
+  --icon-xs:  12px;
+  --icon-sm:  16px;
+  --icon-md:  20px;
+  --icon-lg:  24px;
+  --icon-xl:  32px;
+
+  /* ─── Motion ─────────────────────────────────────────── */
+  --ease-standard:   cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0.0, 1.0, 1);
+
+  --duration-instant: 100ms;
+  --duration-fast:    200ms;
+  --duration-normal:  300ms;
+  --duration-slow:    500ms;
+
+  /* ─── Brand Color Gradients (기본 컬러) ─────────────────
+     브랜드 컬러의 그라데이션 표현 — 깊이와 입체감 부여     */
+  --grad-green:  linear-gradient(135deg, #0E2620 0%, #123328 50%, #1A4A38 100%);
+  --grad-brown:  linear-gradient(135deg, #1E1A10 0%, #3E3523 55%, #4A4030 100%);
+  --grad-orange: linear-gradient(135deg, #BF4500 0%, #FF5C00 60%, #FF7A00 100%);
+  --grad-yellow: linear-gradient(120deg, #B87800 0%, #FFC600 55%, #FFD740 100%);
+
+  /* ─── Nature Backgrounds (배경 — 자연, 완만한 대비) ──────
+     숲·토양·안개처럼 낮은 채도 대비, 유기적 색 전환        */
+  --bg-nature-dawn:    linear-gradient(180deg, #FAF8F4 0%, #F4F1E9 45%, #ECE8DE 100%);
+  --bg-nature-forest:  linear-gradient(160deg, #F5F3EE 0%, #EDE9E1 50%, #E6E1D6 100%);
+  --bg-nature-earth:   linear-gradient(180deg, #EDEAE3 0%, #E4DFD4 100%);
+  --bg-nature-canopy:  linear-gradient(150deg, #E9F2ED 0%, #F0F5F2 40%, #F5F3EE 100%);
+  --bg-nature-mist:    linear-gradient(180deg, #FFFFFF 0%, #F8F6F2 35%, #F2EFE7 100%);
+  --bg-nature-deep:    linear-gradient(160deg, #0A1F18 0%, #0E2620 40%, #123328 100%);
+  --bg-nature-soil:    linear-gradient(160deg, #1A1508 0%, #2C2516 45%, #3E3523 100%);
+
+  /* ─── Technical Borders (보더 — 기술적, 날렵한 대비) ────
+     CAD 도면처럼 선명한 명도 대비, 정밀한 경계선           */
+  --border-tech-max:    #1A1714;  /* 최고 대비 — 헤더, 핵심 구분 */
+  --border-tech-strong: #2A2624;  /* 강한 대비 — 카드 테두리     */
+  --border-tech-green:  #123328;  /* HM_GREEN 날카로운 포인트    */
+  --border-tech-brown:  #3E3523;  /* HM_BROWN 날카로운 포인트    */
+  --border-tech-orange: #FF5C00;  /* HM_ORANGE 액션 경계         */
+  --border-tech-mid:    #B8B3AA;  /* 중간 대비 — 일반 구분선     */
+  --border-tech-light:  #D8D2C8;  /* 낮은 대비 — 내부 구분       */
+
+  /* ─── Shimmer Border Gradients (SW 금속 광택 테두리) ─────
+     피그마 실측값. 광원이 왼쪽에서 오는 금속 반사 표현      */
+  --gra-border-yellow:  linear-gradient(90deg, #A67D03 0%, #F2CC0F 16%, #FADD4F 37%, #F2CC0F 62%, #926E03 88%);
+  --gra-border-green:   linear-gradient(90deg, #08251C 0%, #208769 37%, #08241C 81%, #051612 100%);
+  --gra-border-orange:  linear-gradient(90deg, #DA6813 9%, #FFBB89 38%, #E5690D 72%, #AE3607 93%);
+  --gra-border-brown:   linear-gradient(90deg, #493927 0%, #6F5739 17%, #A38663 50%, #2C2213 85%, #413A2B 100%);
+  --gra-border-brown1:  linear-gradient(90deg, #20190E 0%, #534731 45%, #857553 70%, #423625 100%);
+  --gra-border-brown2:  linear-gradient(90deg, #886D35 0%, #423625 9%, #F3DBA8 26%, #0E0B06 84%, #574B30 100%);
+
+  /* ─── Face Gradients (SW 컴포넌트 배경 입체감) ───────────
+     피그마 실측값. 컴포넌트 표면의 깊이와 질감 표현         */
+  --gra-face-brown:      linear-gradient(180deg, #312A1B 6%,  #594C31 39%, #4A3C2B 75%, #262218 98%);
+  --gra-face-red:        linear-gradient(180deg, #700000 0%,  #BE0000 47%, #620808 84%, #590000 100%);
+  --gra-face-cmd-group:  linear-gradient(180deg, #2F281A 0%,  #312A1B 5%,  #332B1C 36%, #463C29 58%, #38301F 79%, #19160E 98%);
+  --gra-face-btn-cmd:    linear-gradient(180deg, #081813 0%,  #09271E 9%,  #0B3227 25%, #0E3D2F 51%, #0B3227 80%, #0A2B21 90%, #081813 100%);
+  --gra-face-green-deep: linear-gradient(180deg, #0F3025 0%,  #194335 38%, #0B221B 74%, #0D231C 100%);
+  --gra-face-prop-hdr:   linear-gradient(180deg, #585349 0%,  #8A8170 47%, #413D35 100%);
+  --gra-face-scrollbar:  linear-gradient(180deg, #2E725E 0%,  #47AF91 100%);
+
+  /* ─── Gradients — Common ─────────────────────────────── */
+  --grad-hero-dark:      linear-gradient(180deg, #0D1F14 0%, #1A1714 100%);
+  --grad-section-green:  linear-gradient(135deg, #123328 0%, #1A4A38 100%);
+  --grad-surface-subtle: linear-gradient(180deg, #F5F3EE 0%, #F0EDE8 100%);
+  --grad-sw-panel-depth: linear-gradient(180deg, #3E3523 0%, #2C2516 100%);
+  --grad-dark-section:   linear-gradient(180deg, #1A1714 0%, #0D1F14 100%);
+  --grad-footer-accent:  linear-gradient(180deg, #123328 0%, #0E2620 100%);
+
+  /* ─── Gradients — WEB ────────────────────────────────── */
+  --grad-web-hero-overlay:       linear-gradient(180deg, #0D1F14 0%, #1A1714 60%, #0D1F14 100%);
+  --grad-web-section-transition: linear-gradient(180deg, #F5F3EE 0%, #F0EDE8 100%);
+  --grad-web-cta-band:           linear-gradient(135deg, #123328 0%, #1A4A38 100%);
+
+  /* ─── Gradients — SW ─────────────────────────────────── */
+  --grad-sw-dialog-sidebar: linear-gradient(180deg, #1E1A10 0%, #2C2516 100%);
+  --grad-sw-bottom-zone:    linear-gradient(90deg,  #2C2516 0%, #3E3523 100%);
+  --grad-sw-canvas-edge:    linear-gradient(180deg, #000000 0%, #1A1A1A 100%);
+
+  /* ─── SW App Colors ──────────────────────────────────── */
+  --sw-app-bg:          #141211;
+  --sw-header-bg:       #060606;
+  --sw-canvas:          #000000;
+  --sw-ribbon-bg:       #123328;  /* HM_GREEN — TOP Zone 리본 바   */
+  --sw-ribbon-text:     #FFFFFF;
+  --sw-bottom-bg:       #3E3523;  /* HM_BROWN — BOTTOM Zone 명령어 바 */
+  --sw-tool-hover:      #1A4A38;  /* TOP Zone hover  (green) */
+  --sw-tool-active:     #0E2620;  /* TOP Zone active (green) */
+  --sw-bottom-hover:    #2C2516;  /* BOTTOM Zone hover  (brown) */
+  --sw-bottom-active:   #1E1A10;  /* BOTTOM Zone active (brown) */
+  --sw-dialog-header:   #211D13;
+  --sw-dialog-body:     #2C2516;
+  --sw-sidebar-bg:      #1E1A10;
+  --sw-sidebar-selected:#3E3523;
+  --sw-alert:           #CC0000;
+  --sw-active:          #E6B800;
+  --sw-editable-value:  #E60403;  /* 피그마 확인값 (구 #ED0303) */
+  --sw-selected-title:  #FFC600;
+
+  /* ─── WEB Colors ─────────────────────────────────────── */
+  --web-nav-bg:          #FFFFFF;
+  --web-nav-text:        #1A1714;
+  --web-nav-text-hover:  #FF5C00;  /* HM_ORANGE 업데이트 반영 */
+  --web-hero-overlay:    #0D1F14;
+  --web-section-alt:     #F0EDE8;
+  --web-dark-section:    #1A1714;
+  --web-auth-left:       #2C2516;
+  --web-footer-bg:       #123328;
+  --web-footer-text:     #D4D1CE;
+  --web-footer-link:     #FFFFFF;
+
+  /* ─── WEB Layout ─────────────────────────────────────── */
+  --web-max-width:      1200px;
+  --web-gutter:           24px;
+  --web-margin:           40px;
+  --web-section-py:       64px;
+  --web-section-py-xl:    80px;
+  --web-nav-height:       64px;
+  --web-hero-min-height: 480px;
+  --web-footer-py:        48px;
+
+  /* ─── SW Layout ──────────────────────────────────────── */
+  --sw-header-height:         49px;
+  --sw-bottom-sub-a-height:   33px;
+  --sw-bottom-sub-b-height:   47px;
+  --sw-bottom-total-height:   80px;
+  --sw-panel-width:          314px;
+  --sw-cmd-btn-width:         68px;
+  --sw-cmd-btn-height:        47px;
+  --sw-aux-btn-width:        104px;
+  --sw-aux-btn-height:        33px;
+  --sw-dialog-width:         640px;
+  --sw-dialog-sidebar-width: 160px;
+}
