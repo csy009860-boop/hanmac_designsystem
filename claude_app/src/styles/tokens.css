@@ -1,24 +1,80 @@
 /* ============================================================
    한맥 디자인 시스템 — Design Tokens
    EG-BIM CAD/BIM Software + 이지빔 웹사이트
+   Source: D:\csy\ai\00_design_md\tokens.css
    ============================================================ */
 
 :root {
-  /* ─── Primary Colors ─────────────────────────────────── */
-  --hm-green:  #123328;
-  --hm-brown:  #3E3523;
+  /* ─── Color Scale — Green ───────────────────────────── */
+  --hm-green-100: #3EBD9A;  /* 이미지 추정값 */
+  --hm-green-200: #249473;
+  --hm-green-300: #266651;
+  --hm-green-400: #205241;
+  --hm-green-500: #123328;  /* HM Green — Default */
+  --hm-green-600: #0A221D;
+  --hm-green-700: #071E18;
+  --hm-green-800: #020A07;
+  --hm-green: var(--hm-green-500);
+
+  /* ─── Color Scale — Brown ───────────────────────────── */
+  --hm-brown-100: #ECD4A2;
+  --hm-brown-200: #C1A770;
+  --hm-brown-300: #897445;
+  --hm-brown-400: #604F32;
+  --hm-brown-500: #3E3523;  /* HM Brown — Default */
+  --hm-brown-600: #352D1D;
+  --hm-brown-700: #1D1810;
+  --hm-brown-800: #1D1810;
+  --hm-brown: var(--hm-brown-500);
+
+  /* ─── Color Scale — Orange ──────────────────────────── */
+  --hm-orange-100: #F5C8A8;  /* 이미지 추정값 */
+  --hm-orange-200: #EBA372;  /* 이미지 추정값 */
+  --hm-orange-300: #E07F3A;  /* 이미지 추정값 */
+  --hm-orange-400: #D9630F;  /* 이미지 추정값 */
+  --hm-orange-500: #CC5200;  /* HM Orange — Default */
+  --hm-orange-600: #BC4C00;
+  --hm-orange-700: #883700;
+  --hm-orange-800: #4F2000;
+  --hm-orange: var(--hm-orange-500);
 
   /* ─── Accent Colors ──────────────────────────────────── */
-  --hm-orange: #FF5C00;  /* 피그마 확인값 (구 #CC5200) */
-  --hm-yellow: #FFC600;
+  --hm-yellow:        #FFC600;
+  --hm-accent-orange: #FF5C00;
 
   /* ─── Neutral Colors ─────────────────────────────────── */
-  --hm-white:       #FFFFFF;
-  --hm-black:       #1A1714;
-  --hm-dark-gray:   #4A4640;
-  --hm-mid-gray:    #888580;
-  --hm-light-gray:  #D4D1CE;
-  --hm-surface:     #F5F3EE;
+  --hm-neutral-green-100: #F0F7F5;
+  --hm-neutral-green-200: #B6D0C9;
+  --hm-neutral-brown-100: #F6F4F2;
+  --hm-neutral-brown-200: #D4CBBD;
+
+  /* ─── Black Opacity Scale ───────────────────────────── */
+  --hm-black-100: rgba(0,0,0,0.05);
+  --hm-black-200: rgba(0,0,0,0.10);
+  --hm-black-300: rgba(0,0,0,0.25);
+  --hm-black-400: rgba(0,0,0,0.40);
+  --hm-black-500: rgba(0,0,0,0.55);
+  --hm-black-600: rgba(0,0,0,0.70);
+  --hm-black-700: rgba(0,0,0,0.85);
+  --hm-black-800: rgba(0,0,0,1);
+
+  /* ─── White Opacity Scale ───────────────────────────── */
+  --hm-white-100: rgba(255,255,255,0.05);
+  --hm-white-200: rgba(255,255,255,0.10);
+  --hm-white-300: rgba(255,255,255,0.25);
+  --hm-white-400: rgba(255,255,255,0.40);
+  --hm-white-500: rgba(255,255,255,0.55);
+  --hm-white-600: rgba(255,255,255,0.70);
+  --hm-white-700: rgba(255,255,255,0.85);
+  --hm-white-800: rgba(255,255,255,1);
+
+  /* ─── UI Utility Colors (뷰어/앱 인프라 — 브랜드 토큰 아님) */
+  --hm-white:      #FFFFFF;
+  --hm-black:      #1A1714;
+  --hm-dark-gray:  #4A4640;
+  --hm-mid-gray:   #888580;
+  --hm-light-gray: #D4D1CE;
+  --hm-surface:    #F5F3EE;
 
   /* ─── Semantic Colors ────────────────────────────────── */
   --hm-success: #1A6B3C;
@@ -32,35 +88,35 @@
   --border-tech:   #CFC6AD;  /* 문서 UI 기술 보더 — 웜 베이지 테크 보더 */
 
   /* ─── Action Derivatives ─────────────────────────────── */
-  --hm-orange-hover:  #E05200;  /* #FF5C00 hover  */
-  --hm-orange-active: #BF4500;  /* #FF5C00 active */
-  --hm-orange-dim:    #994000;  /* #FF5C00 dim    */
-  --hm-green-hover:   #1A4A38;
-  --hm-green-active:  #0E2620;
+  --hm-orange-hover:  #D9630F;  /* --hm-orange-400 hover  */
+  --hm-orange-active: #BC4C00;  /* --hm-orange-600 active */
+  --hm-orange-dim:    #883700;  /* --hm-orange-700 dim    */
+  --hm-orange-light:  #E07F3A;  /* --hm-orange-300 highlight */
+  --hm-green-hover:   #205241;  /* --hm-green-400 */
+  --hm-green-active:  #0A221D;  /* --hm-green-600 */
 
   /* ─── SW Semantic Tokens ─────────────────────────────── */
   --solid-arrow:      #47AF91;  /* 화살표 / 포인터 민트그린     */
-  --text-green100:    #F0F7F5;  /* 밝은 그린 서페이스           */
-  --text-green200:    #B6D0C9;  /* 중간 그린 텍스트             */
-  --text-brown100:    #F6F4F2;  /* 밝은 브라운 서페이스         */
-  --text-brown200:    #D4CBBD;  /* 중간 브라운 텍스트           */
+  --text-green100:    var(--hm-neutral-green-100);  /* 밝은 그린 서페이스 */
+  --text-green200:    var(--hm-neutral-green-200);  /* 중간 그린 텍스트   */
+  --text-brown100:    var(--hm-neutral-brown-100);  /* 밝은 브라운 서페이스 */
+  --text-brown200:    var(--hm-neutral-brown-200);  /* 중간 브라운 텍스트 */
   --text-khaki100:    #D7D2B0;  /* 명령어 LNB 카키 텍스트       */
   --brown900:         #26221A;  /* 드롭다운 최다크 브라운        */
   --sw-header-border: #5F4B0F;  /* SW 헤더 상/하단 앰버 구분선  */
 
   /* ─── Typography ─────────────────────────────────────── */
   --font-primary: 'Noto Sans KR', sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
 
-  --text-size-display:    40px;
-  --text-size-heading-1:  28px;
-  --text-size-heading-2:  22px;
-  --text-size-heading-3:  18px;
-  --text-size-body-large: 16px;
-  --text-size-body:       14px;
-  --text-size-caption:    12px;
-  --text-size-button:     14px;
-  --text-size-label:      12px;
+  --text-size-display:    42px;
+  --text-size-heading-1:  30px;
+  --text-size-heading-2:  24px;
+  --text-size-heading-3:  20px;
+  --text-size-body-large: 18px;
+  --text-size-body:       16px;
+  --text-size-caption:    14px;
+  --text-size-button:     16px;
+  --text-size-label:      14px;
 
   --text-weight-display:    700;
   --text-weight-heading-1:  700;
@@ -95,10 +151,10 @@
 
   /* ─── Elevation ──────────────────────────────────────── */
   --shadow-z0: none;
-  --shadow-z1: 0 1px 4px #C4C1BB;
-  --shadow-z2: 0 4px 12px #B8B4AE;
-  --shadow-z3: 0 8px 24px #A8A49E;
-  --shadow-z4: 0 12px 32px #989490;
+  --shadow-z1: 0 1px 2px #0000001C;
+  --shadow-z2: 0 2px 4px #0000001C;
+  --shadow-z3: 0 3px 6px #0000001C;
+  --shadow-z4: 0 4px 8px #0000001C;
 
   /* ─── Border Radius ──────────────────────────────────── */
   --radius-none: 0px;
@@ -127,44 +183,57 @@
   --duration-normal:  300ms;
   --duration-slow:    500ms;
 
-  /* ─── Brand Color Gradients (기본 컬러) ─────────────────
-     브랜드 컬러의 그라데이션 표현 — 깊이와 입체감 부여     */
-  --grad-green:  linear-gradient(135deg, #0E2620 0%, #123328 50%, #1A4A38 100%);
-  --grad-brown:  linear-gradient(135deg, #1E1A10 0%, #3E3523 55%, #4A4030 100%);
-  --grad-orange: linear-gradient(135deg, #BF4500 0%, #FF5C00 60%, #FF7A00 100%);
-  --grad-yellow: linear-gradient(120deg, #B87800 0%, #FFC600 55%, #FFD740 100%);
+  /* ─── 1. 브랜드컬러 그라데이션 ──────────────────────────
+     버튼·패널 표면 입체감. 90deg 수평 하이라이트            */
+  --grad-brand-green-1: linear-gradient(180deg, #124133 0%, #296B55 22%, #123328 58%, #071E18 88.5%, #0F3028 100%);
+  --grad-brand-green-2: linear-gradient(180deg, #124133 0%, #124133 12%, #296B55 50%, #071E18 88.5%, #0F3028 100%);
+  --grad-brand-green-3: linear-gradient(180deg, #0F3028 0%, #071E18 11.5%, #123328 42%, #296B55 78%, #124133 100%);
+  --grad-brand-brown-1: linear-gradient(180deg, #3E3523 0%, #604F32 22%, #3E3523 58%, #1D1810 88.5%, #352D1D 100%);
+  --grad-brand-brown-2: linear-gradient(180deg, #3E3523 0%, #352D1D 12%, #604F32 50%, #352D1D 88.5%, #3E3523 100%);
+  --grad-brand-brown-3: linear-gradient(180deg, #352D1D 0%, #1D1810 11.5%, #3E3523 42%, #604F32 78%, #3E3523 100%);
 
-  /* ─── Nature Backgrounds (배경 — 자연, 완만한 대비) ──────
-     숲·토양·안개처럼 낮은 채도 대비, 유기적 색 전환        */
-  --bg-nature-dawn:    linear-gradient(180deg, #FAF8F4 0%, #F4F1E9 45%, #ECE8DE 100%);
-  --bg-nature-forest:  linear-gradient(160deg, #F5F3EE 0%, #EDE9E1 50%, #E6E1D6 100%);
-  --bg-nature-earth:   linear-gradient(180deg, #EDEAE3 0%, #E4DFD4 100%);
-  --bg-nature-canopy:  linear-gradient(150deg, #E9F2ED 0%, #F0F5F2 40%, #F5F3EE 100%);
-  --bg-nature-mist:    linear-gradient(180deg, #FFFFFF 0%, #F8F6F2 35%, #F2EFE7 100%);
-  --bg-nature-deep:    linear-gradient(160deg, #0A1F18 0%, #0E2620 40%, #123328 100%);
-  --bg-nature-soil:    linear-gradient(160deg, #1A1508 0%, #2C2516 45%, #3E3523 100%);
+  /* ─── 2. 보더컬러 그라데이션 ────────────────────────────
+     메탈 반사 광원 보더 — border-image 속성으로 적용       */
+  --grad-border-green: linear-gradient(180deg, #123328 0%, #124133 19.02%, #34DAAA 47.59%, #0D2C24 82.02%, #124133 100%);
+  --grad-border-brown: linear-gradient(180deg, #77643C 0%, #423625 19.02%, #F3DBA8 47.59%, #2C2213 82.02%, #685A3B 100%);
+
+  /* ─── 3. 엘리베이션 그라데이션 ──────────────────────────
+     Z0 평면 → Z3 반원형. 중요도 높을수록 볼륨·광도 증가   */
+  --grad-elev-z0-light:  #F6F4F2;
+  --grad-elev-z0-dark:   #1D1810;
+  --grad-elev-green-z1:  linear-gradient(180deg, #296B55 0%, #123328 6.94%, #0D2C24 100%);
+  --grad-elev-green-z2:  linear-gradient(180deg, #071E18 0%, #124133 14%, #124133 49.9%, #123328 88.5%, #071E18 100%);
+  --grad-elev-green-z3:  linear-gradient(180deg, #124133 0%, #296B55 32.89%, #123328 65%, #071E18 88.5%, #0F3028 100%);
+  --grad-elev-brown-z1:  linear-gradient(180deg, #604F32 0%, #262218 6.94%, #281F16 10.79%, #282216 100%);
+  --grad-elev-brown-z2:  linear-gradient(180deg, #1D1810 0%, #3E3523 14%, #3E3523 49.9%, #3E3523 88.5%, #1D1810 100%);
+  --grad-elev-brown-z3:  linear-gradient(180deg, #3E3523 0%, #604F32 32.89%, #3E3523 65%, #1D1810 88.5%, #352D1D 100%);
+
+  /* ─── 4. 강조그라데이션 ──────────────────────────────────*/
+  --grad-accent-orange: linear-gradient(180deg, #DA6813 8.52%, #FFBB89 37.93%, #E5690D 71.85%, #AE3607 92.77%);
+  --grad-accent-yellow: linear-gradient(180deg, #A67D03 0%, #F2CC0F 16.41%, #FADD4F 37.19%, #F2CC0F 62.03%, #926E03 87.88%);
 
   /* ─── Technical Borders (보더 — 기술적, 날렵한 대비) ────
      CAD 도면처럼 선명한 명도 대비, 정밀한 경계선           */
-  --border-tech-max:    #1A1714;  /* 최고 대비 — 헤더, 핵심 구분 */
-  --border-tech-strong: #2A2624;  /* 강한 대비 — 카드 테두리     */
-  --border-tech-green:  #123328;  /* HM_GREEN 날카로운 포인트    */
-  --border-tech-brown:  #3E3523;  /* HM_BROWN 날카로운 포인트    */
-  --border-tech-orange: #FF5C00;  /* HM_ORANGE 액션 경계         */
-  --border-tech-mid:    #B8B3AA;  /* 중간 대비 — 일반 구분선     */
-  --border-tech-light:  #D8D2C8;  /* 낮은 대비 — 내부 구분       */
+  --border-tech-max:    #1A1714;
+  --border-tech-strong: #2A2624;
+  --border-tech-green:  #123328;
+  --border-tech-brown:  #3E3523;
+  --border-tech-orange: #CC5200;
+  --border-tech-mid:    #B8B3AA;
+  --border-tech-light:  #D8D2C8;
 
-  /* ─── Shimmer Border Gradients (SW 금속 광택 테두리) ─────
-     피그마 실측값. 광원이 왼쪽에서 오는 금속 반사 표현      */
+  /* ─── 인프라 그라데이션 (SW/WEB/공통 — 명세 외) ──────────
+     앱 코드 참조 중. 직접 수정 시 주의                     */
+  --grad-green:  linear-gradient(135deg, #0E2620 0%, #123328 50%, #1A4A38 100%);
+  --grad-brown:  linear-gradient(135deg, #1E1A10 0%, #3E3523 55%, #4A4030 100%);
+  --grad-orange: var(--grad-accent-orange);
+  --grad-yellow: var(--grad-accent-yellow);
+  --gra-border-green:  var(--grad-border-green);
+  --gra-border-brown:  var(--grad-border-brown);
+  --gra-border-brown1: var(--grad-border-brown);
+  --gra-border-brown2: var(--grad-border-brown);
   --gra-border-yellow:  linear-gradient(90deg, #A67D03 0%, #F2CC0F 16%, #FADD4F 37%, #F2CC0F 62%, #926E03 88%);
-  --gra-border-green:   linear-gradient(90deg, #08251C 0%, #208769 37%, #08241C 81%, #051612 100%);
   --gra-border-orange:  linear-gradient(90deg, #DA6813 9%, #FFBB89 38%, #E5690D 72%, #AE3607 93%);
-  --gra-border-brown:   linear-gradient(90deg, #493927 0%, #6F5739 17%, #A38663 50%, #2C2213 85%, #413A2B 100%);
-  --gra-border-brown1:  linear-gradient(90deg, #20190E 0%, #534731 45%, #857553 70%, #423625 100%);
-  --gra-border-brown2:  linear-gradient(90deg, #886D35 0%, #423625 9%, #F3DBA8 26%, #0E0B06 84%, #574B30 100%);
-
-  /* ─── Face Gradients (SW 컴포넌트 배경 입체감) ───────────
-     피그마 실측값. 컴포넌트 표면의 깊이와 질감 표현         */
   --gra-face-brown:      linear-gradient(180deg, #312A1B 6%,  #594C31 39%, #4A3C2B 75%, #262218 98%);
   --gra-face-red:        linear-gradient(180deg, #700000 0%,  #BE0000 47%, #620808 84%, #590000 100%);
   --gra-face-cmd-group:  linear-gradient(180deg, #2F281A 0%,  #312A1B 5%,  #332B1C 36%, #463C29 58%, #38301F 79%, #19160E 98%);
@@ -172,21 +241,15 @@
   --gra-face-green-deep: linear-gradient(180deg, #0F3025 0%,  #194335 38%, #0B221B 74%, #0D231C 100%);
   --gra-face-prop-hdr:   linear-gradient(180deg, #585349 0%,  #8A8170 47%, #413D35 100%);
   --gra-face-scrollbar:  linear-gradient(180deg, #2E725E 0%,  #47AF91 100%);
-
-  /* ─── Gradients — Common ─────────────────────────────── */
   --grad-hero-dark:      linear-gradient(180deg, #0D1F14 0%, #1A1714 100%);
   --grad-section-green:  linear-gradient(135deg, #123328 0%, #1A4A38 100%);
   --grad-surface-subtle: linear-gradient(180deg, #F5F3EE 0%, #F0EDE8 100%);
   --grad-sw-panel-depth: linear-gradient(180deg, #3E3523 0%, #2C2516 100%);
   --grad-dark-section:   linear-gradient(180deg, #1A1714 0%, #0D1F14 100%);
   --grad-footer-accent:  linear-gradient(180deg, #123328 0%, #0E2620 100%);
-
-  /* ─── Gradients — WEB ────────────────────────────────── */
   --grad-web-hero-overlay:       linear-gradient(180deg, #0D1F14 0%, #1A1714 60%, #0D1F14 100%);
   --grad-web-section-transition: linear-gradient(180deg, #F5F3EE 0%, #F0EDE8 100%);
   --grad-web-cta-band:           linear-gradient(135deg, #123328 0%, #1A4A38 100%);
-
-  /* ─── Gradients — SW ─────────────────────────────────── */
   --grad-sw-dialog-sidebar: linear-gradient(180deg, #1E1A10 0%, #2C2516 100%);
   --grad-sw-bottom-zone:    linear-gradient(90deg,  #2C2516 0%, #3E3523 100%);
   --grad-sw-canvas-edge:    linear-gradient(180deg, #000000 0%, #1A1A1A 100%);
@@ -214,7 +277,7 @@
   /* ─── WEB Colors ─────────────────────────────────────── */
   --web-nav-bg:          #FFFFFF;
   --web-nav-text:        #1A1714;
-  --web-nav-text-hover:  #FF5C00;  /* HM_ORANGE 업데이트 반영 */
+  --web-nav-text-hover:  #CC5200;  /* HM_ORANGE */
   --web-hero-overlay:    #0D1F14;
   --web-section-alt:     #F0EDE8;
   --web-dark-section:    #1A1714;

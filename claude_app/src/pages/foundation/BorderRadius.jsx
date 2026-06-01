@@ -1,5 +1,6 @@
 import CodeBlock from '../../components/CodeBlock';
 import PageLayout from '../../components/PageLayout';
+
 const radii = [
   { token: '--radius-none', val: '0px',    usage: '캔버스, 구분선' },
   { token: '--radius-xs',   val: '2px',    usage: 'SW 컴팩트 UI 요소' },
@@ -10,6 +11,7 @@ const radii = [
   { token: '--radius-2xl',  val: '16px',   usage: '모달, 다이얼로그' },
   { token: '--radius-full', val: '9999px', usage: '토글, 아바타, 플로팅 버튼' },
 ];
+
 const cssCode = `:root {
   --radius-none: 0px;
   --radius-xs:   2px;
@@ -20,6 +22,7 @@ const cssCode = `:root {
   --radius-2xl: 16px;
   --radius-full: 9999px;
 }`;
+
 export default function BorderRadius() {
   return (
     <PageLayout
@@ -27,21 +30,19 @@ export default function BorderRadius() {
       title="Border Radius"
       description="none(0px)에서 full(9999px)까지 8단계 반경 스케일. SW 컴팩트 UI(xs=2px)부터 플로팅 버튼(full=9999px)까지."
     >
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '40px' }}>
+
+      <div className="radius-demo">
         {radii.map(({ token, val, usage }) => (
-          <div key={token} style={{ textAlign: 'center', minWidth: '100px' }}>
-            <div style={{
-              width: '80px', height: '80px',
-              background: 'linear-gradient(135deg, #123328 0%, #1A4A38 100%)',
-              borderRadius: val === '9999px' ? '9999px' : val,
-              margin: '0 auto 10px',
-            }} />
-            <div style={{ fontSize: '11px', fontWeight: '600', color: 'var(--hm-black)', fontFamily: 'monospace' }}>{token.replace('--radius-','')}</div>
-            <div style={{ fontSize: '11px', color: 'var(--hm-orange)', fontFamily: 'monospace' }}>{val}</div>
-            <div style={{ fontSize: '10px', color: 'var(--hm-mid-gray)', marginTop: '2px' }}>{usage}</div>
+          <div key={token} className="radius-item">
+            {/* borderRadius stays inline: the radius value IS the token value being demonstrated */}
+            <div className="radius-block" style={{ borderRadius: val }} />
+            <div className="radius-token">{token.replace('--radius-', '')}</div>
+            <div className="radius-value">{val}</div>
+            <div className="radius-usage">{usage}</div>
           </div>
         ))}
       </div>
+
       <CodeBlock code={cssCode} language="css" />
     </PageLayout>
   );
