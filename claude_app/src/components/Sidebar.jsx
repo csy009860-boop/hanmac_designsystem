@@ -93,7 +93,7 @@ export default function Sidebar({ activePage, onNavigate }) {
               </div>
 
               <div className="sidebar-children">
-                {item.children.map((child) => {
+                {item.children.filter(c => !c.hidden).map((child) => {
                   const isActive = activePage === child.page;
                   return (
                     <button

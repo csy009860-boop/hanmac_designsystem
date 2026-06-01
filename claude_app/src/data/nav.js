@@ -22,11 +22,11 @@ export const navTree = [
     children: [
       { id: 'buttons',   label: '버튼',       page: 'common/buttons' },
       { id: 'inputs',    label: '입력 필드',  page: 'common/inputs' },
-      { id: 'cards',     label: '카드',       page: 'common/cards' },
-      { id: 'badges',    label: '뱃지',       page: 'common/badges' },
+      { id: 'cards',     label: '카드',       page: 'common/cards',   hidden: true },
+      { id: 'badges',    label: '뱃지',       page: 'common/badges',  hidden: true },
       { id: 'tables',    label: '테이블',     page: 'common/tables' },
       { id: 'variables', label: 'Variables',  page: 'common/variables' },
-      { id: 'layout',    label: '레이아웃',   page: 'common/layout' },
+      { id: 'layout',    label: '레이아웃',   page: 'common/layout',  hidden: true },
     ],
   },
 ];
