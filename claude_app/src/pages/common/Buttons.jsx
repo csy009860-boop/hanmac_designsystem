@@ -133,9 +133,10 @@ function ThreePane({ light, darkGreen, darkBrown }) {
   );
 }
 function Pane({ label, bg, dark, children }) {
+  const labelBg = dark ? (bg === BG_DK_GREEN ? '#0A1A14' : '#211D13') : 'rgba(0,0,0,0.06)';
   return (
     <div style={{ borderRadius: '8px', overflow: 'hidden', border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e5e0d8' }}>
-      <div style={{ fontSize: '11px', fontWeight: '600', padding: '5px 12px', letterSpacing: '0.04em', background: dark ? 'rgba(0,0,0,0.35)' : 'rgba(0,0,0,0.06)', color: dark ? 'rgba(255,255,255,0.45)' : '#888' }}>{label}</div>
+      <div style={{ fontSize: '11px', fontWeight: '600', padding: '5px 12px', letterSpacing: '0.04em', background: labelBg, color: dark ? 'rgba(255,255,255,0.45)' : '#888' }}>{label}</div>
       <div style={{ background: bg, padding: '18px 14px', display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', minHeight: '70px' }}>{children}</div>
     </div>
   );
@@ -143,9 +144,10 @@ function Pane({ label, bg, dark, children }) {
 
 /* ── 상태 레이블 ── */
 function StateSection({ bg, dark, children }) {
+  const labelBg = dark ? (bg === 'green' ? '#0A1A14' : '#211D13') : 'rgba(0,0,0,0.06)';
   return (
     <div style={{ borderRadius: '8px', overflow: 'hidden', border: dark ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e5e0d8', marginBottom: '10px' }}>
-      <div style={{ fontSize: '11px', fontWeight: '600', padding: '5px 12px', letterSpacing: '0.04em', background: dark ? 'rgba(0,0,0,0.35)' : 'rgba(0,0,0,0.06)', color: dark ? 'rgba(255,255,255,0.45)' : '#888' }}>
+      <div style={{ fontSize: '11px', fontWeight: '600', padding: '5px 12px', letterSpacing: '0.04em', background: labelBg, color: dark ? 'rgba(255,255,255,0.45)' : '#888' }}>
         {dark ? (bg === 'green' ? '🌿 Dark · Green' : '🌰 Dark · Brown') : '☀ Light'}
       </div>
       <div style={{ background: bg === 'light' ? BG_LIGHT : bg === 'green' ? BG_DK_GREEN : BG_DK_BROWN, padding: '14px' }}>

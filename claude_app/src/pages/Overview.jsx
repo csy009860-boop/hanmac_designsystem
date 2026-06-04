@@ -1,33 +1,48 @@
-﻿import { Layers, LayoutGrid, Leaf, ScrollText } from 'lucide-react';
+import { Shapes, Component } from 'lucide-react';
+import PageLayout, { Section } from '../components/PageLayout';
 
-const BRAND_COLORS = [
-  { color: 'var(--hm-green)',  label: 'HM_GREEN — Vegetation' },
-  { color: 'var(--hm-brown)',  label: 'HM_BROWN — Soil' },
-  { color: 'var(--hm-orange)', label: 'HM_ORANGE — Action' },
-  { color: 'var(--hm-yellow)', label: 'HM_YELLOW — Highlight' },
-];
 
-const SECTION_CARDS = [
+const PHILOSOPHY_COLORS = [
   {
-    icon: Layers, title: 'Foundation',
-    desc: '컬러 토큰, 타이포그래피, 스페이싱, 엘리베이션, 그라데이션 — 디자인 시스템의 기초 언어',
-    page: 'foundation/colors',
+    token: '--hm-orange',
+    color: 'var(--hm-orange)',
+    name: 'HM Orange',
+    role: 'Action',
+    desc: '떠오르는 태양, 세상을 밝게 비추는 빛, 새로운 시작',
   },
   {
-    icon: LayoutGrid, title: 'Common Components',
-    desc: 'Buttons, Inputs, Cards, Badges, Tables, Layout, Variables — Solid 단색과 Gradient 두 스타일을 각 컴포넌트별로 제공합니다',
-    page: 'common/buttons',
+    token: '--hm-brown',
+    color: 'var(--hm-brown)',
+    name: 'HM Brown',
+    role: 'Soil',
+    desc: '모든 자연의 기반이 되는 땅의 안정감, 오랜시간 정직하게 쌓아올린 토양의 긍지',
+  },
+  {
+    token: '--hm-green',
+    color: 'var(--hm-green)',
+    name: 'HM Green',
+    role: 'Vegetation',
+    desc: '꾸준히 성장하는 기술력,  계절의 변화로 보여지는 식생의 다양성,  새롭게 태어나는 생명력',
   },
 ];
 
-const BRAND_ITEMS = [
-  { color: 'var(--hm-green)',  name: 'HM_GREEN',  role: '식생 — 명령·기능 (TOP)',    token: 'var(--hm-green)' },
-  { color: 'var(--hm-brown)',  name: 'HM_BROWN',  role: '토양 — 속성·메뉴 (BOTTOM)', token: 'var(--hm-brown)' },
-  { color: 'var(--hm-orange)', name: 'HM_ORANGE', role: '혁신 — CTA 전용',           token: 'var(--hm-orange)' },
-  { color: 'var(--hm-yellow)', name: 'HM_YELLOW', role: '생동 — Highlight',           token: 'var(--hm-yellow)' },
+const SECTIONS = [
+  {
+    id: 'foundation',
+    label: '기초 토큰',
+    icon: Shapes,
+    desc: '컬러 팔레트, 그라데이션, 타이포그래피, 간격, 그림자, 모서리 반경 등 디자인 시스템의 기반 토큰',
+  },
+  {
+    id: 'common',
+    label: '공통 컴포넌트',
+    icon: Component,
+    desc: '버튼, 입력 필드, 카드, 테이블 등 재사용 가능한 UI 컴포넌트 명세',
+  },
 ];
 
 const CHANGELOG = [
+  { ver: 'v2.3.0', date: '2026-06-04', desc: '개요 페이지 전면 개편: 히어로 카드 스타일 적용, 브랜드 철학 헤더 통합. 전체 카드 Standard Card 스타일 통일. Variables 기초 토큰 섹션으로 이동, 사이드바 검색 제거' },
   { ver: 'v2.2.0', date: '2026-05-29', desc: '뷰어 앱 재구조화: SW/WEB 전용 섹션 제거, Tables · Variables · Layout 페이지 신규 추가' },
   { ver: 'v2.1.0', date: '2026-05-26', desc: '그라데이션 토큰 추가 (공통/WEB/SW 전용, 금지 패턴 포함)' },
   { ver: 'v2.0.0', date: '2026-05-26', desc: 'SW/WEB 분리 구조로 전면 재작성. 모든 컴포넌트 명세 포함' },
@@ -37,92 +52,70 @@ const CHANGELOG = [
 
 export default function Overview({ onNavigate }) {
   return (
-    <div className="overview-wrap">
+    <PageLayout
+      hero
+      title="한맥 디자인 시스템"
+      description={<>
+        <p className="overview-header-subtitle">한맥 디자인 시스템은 조직 내 모든 디지털 제품에 일관된 사용자 경험을 제공하기 위한 공통 디자인 기준입니다.<br />Foundation Token, Component, CSS Variable 규칙을 정의하여 AI 기반 개발 환경에서도 동일한 디자인 품질을 구현할 수 있도록 지원합니다.</p>
+        <hr className="overview-header-divider" />
+        <p className="overview-header-body">한맥가족의 경영이념인 '<span style={{ color: '#0F8DD1', fontWeight: 700 }}>기술</span>로 <span style={{ color: '#E28112', fontWeight: 700 }}>사람</span>과 <span style={{ color: '#0EE025', fontWeight: 700 }}>자연</span>이 함께 하는 세상'로 
+        기술의 발전과 혁신을 통해 사람과 자연 간의 조화로운 공존을 추구하고자 하는 의지를 반영합니다. </p>
+      </>}
+    >
 
-      {/* Hero */}
-      <div className="overview-hero">
-        <span className="overview-hero-badge">한맥 디자인 시스템 v2.2.0</span>
-        <h1 className="overview-hero-title">한맥 디자인 시스템</h1>
-        <p className="overview-hero-sub">
-          EG-BIM CAD/BIM 소프트웨어와 이지빔 웹사이트를 위한<br/>
-          통합 디자인 가이드 — 토양(Soil)과 식생(Vegetation)의 철학
-        </p>
-        <div className="overview-hero-colors">
-          {BRAND_COLORS.map(({ color, label }) => (
-            <div key={color} className="overview-color-item">
-              <span className="overview-color-dot" style={{ '--dot-color': color }} />
-              {label}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Stats */}
-      <div className="overview-stat-row">
-        {[
-          { num: '7',  label: 'Foundation 토큰 카테고리' },
-          { num: '7',  label: '공통 컴포넌트' },
-          { num: '36', label: '그라데이션 토큰' },
-          { num: '2',  label: '스타일 (Solid / Gradient)' },
-        ].map(({ num, label }) => (
-          <div key={label} className="overview-stat">
-            <div className="overview-stat-num">{num}</div>
-            <div className="overview-stat-label">{label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Section cards */}
-      <h2 className="overview-section-title">섹션 둘러보기</h2>
-      <div className="overview-grid">
-        {SECTION_CARDS.map(({ icon: Icon, title, desc, page }) => (
-          <div key={page} className="overview-card" onClick={() => onNavigate(page)}>
-            <div className="overview-card-icon"><Icon size={28} /></div>
-            <div className="overview-card-title">{title}</div>
-            <div className="overview-card-desc">{desc}</div>
-            <button
-              className="overview-nav-btn"
-              onClick={(e) => { e.stopPropagation(); onNavigate(page); }}
-            >
-              열기 →
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {/* Brand Philosophy */}
-      <div className="overview-info-box" style={{ marginTop: '48px' }}>
-        <h2 className="overview-info-title"><Leaf size={18} /> 브랜드 철학</h2>
-        <p style={{ fontSize: '16px', color: 'var(--hm-dark-gray)', lineHeight: '1.7', marginBottom: '16px' }}>
-          자연의 원리(토양과 식생)와 기술의 조화를 철학으로 삼습니다.<br/>
-          HM_GREEN(식생)은 명령·기능 영역(TOP Zone), HM_BROWN(토양)은 속성·메뉴 영역(BOTTOM Zone)을 담당합니다.
-        </p>
-        <div className="overview-brand-colors">
-          {BRAND_ITEMS.map(({ color, name, role, token }) => (
-            <div key={name} className="overview-brand-item">
-              <div className="overview-brand-swatch" style={{ '--swatch-color': color }} />
-              <div>
-                <div className="overview-brand-name">{name}</div>
-                <div className="overview-brand-role">{role}</div>
-                <div className="overview-brand-token">{token}</div>
+      {/* 브랜드 컬러 */}
+      <Section
+        title="브랜드 컬러"
+        description="한맥의 모든 제품은 HM Brown과 HM Green, HM Orange가 자연에서 영감을 받은 컬러를 담아 디자인됩니다. 자연과 기술이 조화롭게 어우러지는 아이덴티티를 전달합니다."
+      >
+        <div className="overview-bc-grid">
+          {PHILOSOPHY_COLORS.map(({ token, color, name, role, desc }) => (
+            <div key={token} className="overview-bc-card" style={{ '--ph-color': color }}>
+              <div className="overview-bc-body">
+                <div className="overview-bc-header">
+                  <div className="overview-bc-swatch" />
+                  <div>
+                    <div className="overview-bc-name">{name} <span className="overview-bc-role">{role}</span></div>
+                    <div className="overview-bc-token">{token}</div>
+                  </div>
+                </div>
+                <div className="overview-bc-desc">{desc}</div>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </Section>
 
-      {/* Changelog */}
-      <div className="overview-info-box">
-        <h2 className="overview-info-title"><ScrollText size={18} /> 변경 이력</h2>
-        {CHANGELOG.map(({ ver, date, desc }) => (
-          <div key={ver} className="overview-changelog-row">
-            <span className="overview-changelog-ver">{ver}</span>
-            <span className="overview-changelog-date">{date}</span>
-            <span className="overview-changelog-desc">{desc}</span>
-          </div>
-        ))}
-      </div>
+      {/* 섹션 둘러보기 */}
+      <Section title="섹션 둘러보기">
+        <div className="overview-tour-grid">
+          {SECTIONS.map(({ id, label, icon: Icon, desc }) => (
+            <div key={id} className="overview-tour-card">
+              <div className="overview-tour-card-header">
+                <div className="overview-tour-icon"><Icon size={20} /></div>
+                <div>
+                  <div className="overview-tour-label">{label}</div>
+                  <div className="overview-tour-desc">{desc}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
 
-    </div>
+      {/* 변경 이력 */}
+      <Section title="변경 이력">
+        <div className="token-card">
+          {CHANGELOG.map(({ ver, date, desc }) => (
+            <div key={ver} className="overview-changelog-row">
+              <span className="overview-changelog-ver">{ver}</span>
+              <span className="overview-changelog-date">{date}</span>
+              <span className="overview-changelog-desc">{desc}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+    </PageLayout>
   );
 }

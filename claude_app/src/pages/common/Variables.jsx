@@ -143,24 +143,19 @@ export default function Variables() {
 
       {/* ── UI 유틸리티 ── */}
       <VarSection title="UI Utility Colors — 인터페이스 색상">
-        <VarRow name="--hm-white"      value="#FFFFFF" swatch="#FFFFFF" desc="기본 흰색 배경 / 역색 텍스트" />
-        <VarRow name="--hm-black"      value="#1A1714" swatch="#1A1714" desc="기본 텍스트 / 최심 배경" />
-        <VarRow name="--hm-dark-gray"  value="#4A4640" swatch="#4A4640" desc="보조 텍스트 — 짙은 회색" />
-        <VarRow name="--hm-mid-gray"   value="#888580" swatch="#888580" desc="플레이스홀더 / 아이콘" />
-        <VarRow name="--hm-light-gray" value="#D4D1CE" swatch="#D4D1CE" desc="비활성 테두리 / 구분선" />
-        <VarRow name="--hm-surface"    value="#F5F3EE" swatch="#F5F3EE" desc="카드·패널 배경" />
-        <VarRow name="--hm-divider"    value="#E8E5DF" swatch="#E8E5DF" desc="섹션 구분선 (소프트)" />
-        <VarRow name="--hm-border"     value="#D0CEC9" swatch="#D0CEC9" desc="입력 필드 / 카드 테두리" />
-        <VarRow name="--border-tech"   value="#CFC6AD" swatch="#CFC6AD" desc="문서 UI 기술 보더 — 웜 베이지" />
+        <VarRow name="--hm-surface"  value="#F5F3EE" swatch="#F5F3EE" desc="카드·패널 배경" />
+        <VarRow name="--hm-divider"  value="#E8E5DF" swatch="#E8E5DF" desc="섹션 구분선 (소프트)" />
+        <VarRow name="--hm-border"   value="#D0CEC9" swatch="#D0CEC9" desc="입력 필드 / 카드 테두리" />
+        <VarRow name="--border-tech" value="#CFC6AD" swatch="#CFC6AD" desc="문서 UI 기술 보더 — 웜 베이지" />
       </VarSection>
 
-      {/* ── Semantic ── */}
-      <VarSection title="Semantic Colors — 상태 색상">
+      {/* ── Semantic (hidden — 미노출) ── */}
+      {/* <VarSection title="Semantic Colors — 상태 색상">
         <VarRow name="--hm-success" value="#1A6B3C" swatch="#1A6B3C" desc="성공 / 완료 상태" />
         <VarRow name="--hm-warning" value="#B87800" swatch="#B87800" desc="경고 / 주의 상태" />
         <VarRow name="--hm-error"   value="#CC0000" swatch="#CC0000" desc="오류 / 삭제 상태" />
         <VarRow name="--hm-info"    value="#0A4F8C" swatch="#0A4F8C" desc="정보 / 안내 상태" />
-      </VarSection>
+      </VarSection> */}
 
       {/* ── Action Derivatives ── */}
       <VarSection title="Action Derivatives — 상태별 파생">
@@ -212,7 +207,7 @@ export default function Variables() {
       </VarSection>
 
       {/* ── Elevation ── */}
-      <VarSection title="Elevation — 그림자 토큰">
+      <VarSection title="Shadow — 그림자 토큰">
         <VarRow name="--shadow-z0" value="none"                  desc="기본 요소 / 캔버스" />
         <VarRow name="--shadow-z1" value="0 1px 2px #0000001C"   desc="카드 / 패널 기본" />
         <VarRow name="--shadow-z2" value="0 2px 4px #0000001C"   desc="드롭다운 / 툴팁" />
@@ -220,18 +215,8 @@ export default function Variables() {
         <VarRow name="--shadow-z4" value="0 4px 8px #0000001C"   desc="플로팅 버튼 / 토스트" />
       </VarSection>
 
-      {/* ── Motion ── */}
-      <VarSection title="Motion — 모션 토큰">
-        <VarRow name="--duration-instant" value="100ms" desc="즉각 피드백" />
-        <VarRow name="--duration-fast"    value="200ms" desc="버튼 / 토글 (기본)" />
-        <VarRow name="--duration-normal"  value="300ms" desc="패널 / 카드 전환" />
-        <VarRow name="--duration-slow"    value="500ms" desc="페이지 전환 / 모달" />
-        <VarRow name="--ease-standard"   value="cubic-bezier(0.4, 0.0, 0.2, 1)" desc="일반 UI 전환" />
-        <VarRow name="--ease-decelerate" value="cubic-bezier(0.0, 0.0, 0.2, 1)" desc="Enter 효과" />
-        <VarRow name="--ease-accelerate" value="cubic-bezier(0.4, 0.0, 1.0, 1)" desc="Exit 효과" />
-      </VarSection>
 
-      <h3 className="comp-section-h3">사용 예시</h3>
+<h3 className="comp-section-h3">사용 예시</h3>
       <CodeBlock code={usageCode} language="css" />
 
     </PageLayout>

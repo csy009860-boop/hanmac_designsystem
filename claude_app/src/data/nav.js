@@ -14,6 +14,7 @@ export const navTree = [
       { id: 'spacing',    label: '간격',         page: 'foundation/spacing' },
       { id: 'elevation',  label: '그림자',        page: 'foundation/elevation' },
       { id: 'radius',     label: '모서리 반경',  page: 'foundation/radius' },
+      { id: 'variables',  label: 'Variables',    page: 'common/variables' },
     ],
   },
   {
@@ -22,10 +23,9 @@ export const navTree = [
     children: [
       { id: 'buttons',   label: '버튼',       page: 'common/buttons' },
       { id: 'inputs',    label: '입력 필드',  page: 'common/inputs' },
-      { id: 'cards',     label: '카드',       page: 'common/cards',   hidden: true },
+      { id: 'cards',     label: '카드',       page: 'common/cards' },
       { id: 'badges',    label: '뱃지',       page: 'common/badges',  hidden: true },
       { id: 'tables',    label: '테이블',     page: 'common/tables' },
-      { id: 'variables', label: 'Variables',  page: 'common/variables' },
       { id: 'layout',    label: '레이아웃',   page: 'common/layout',  hidden: true },
     ],
   },

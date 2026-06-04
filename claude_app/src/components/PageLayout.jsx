@@ -6,14 +6,14 @@ const SECTION_EYEBROW_COLORS = {
   'Web Components':    { text: 'var(--hm-success)',       bg: 'var(--text-green100)', dot: 'var(--solid-arrow)' },
 };
 
-export default function PageLayout({ eyebrow, title, description, componentId, children, noPadding = false }) {
+export default function PageLayout({ eyebrow, title, description, componentId, children, noPadding = false, hero = false }) {
   const s = SECTION_EYEBROW_COLORS[eyebrow] || { text: 'var(--hm-orange)', bg: 'var(--hm-white)', dot: 'var(--hm-orange)' };
 
   return (
     <div className={`page-layout${noPadding ? ' no-padding' : ''}`}>
 
       <div
-        className="page-header"
+        className={`page-header${hero ? ' page-header--hero' : ''}`}
         style={{ '--eyebrow-bg': s.bg, '--eyebrow-dot': s.dot, '--eyebrow-text': s.text }}
       >
         <div className="page-header-eyebrow-row">
@@ -31,7 +31,7 @@ export default function PageLayout({ eyebrow, title, description, componentId, c
         <h1 className={`page-title${description ? ' has-description' : ''}`}>{title}</h1>
 
         {description && (
-          <p className="page-description">{description}</p>
+          <div className="page-description">{description}</div>
         )}
       </div>
 

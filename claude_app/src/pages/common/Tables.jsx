@@ -44,7 +44,7 @@ const solidCss = `.ds-table { width: 100%; border-collapse: collapse; font-size:
   color: var(--hm-dark-gray);
   font-size: 11px; font-weight: 700; letter-spacing: 0.04em;
   text-transform: uppercase; padding: 10px 16px; text-align: left;
-  border-bottom: 2px solid var(--border-tech);
+  border-bottom: 1px solid var(--hm-black-200);
 }
 .ds-table td {
   padding: 11px 16px;
@@ -60,10 +60,10 @@ const darkCss = `.ds-table-dark th {
   border-bottom: 2px solid rgb(255 255 255 / 20%);
 }
 .ds-table-dark td {
-  border-bottom: 1px solid #2C2516;
+  border-bottom: 1px solid var(--hm-black-300);
   color: rgba(255,255,255,0.8);
 }
-.ds-table-dark tbody tr:hover td { background: #2C2516; }`;
+.ds-table-dark tbody tr:hover td { background: var(--hm-black-200); }`;
 
 export default function Tables() {
   return (

@@ -1,4 +1,37 @@
+import {
+  LayoutDashboard,
+  Palette, Layers, Type, Ruler, Sun, Squircle, Braces,
+  MousePointerClick, TextCursorInput, CreditCard, Table,
+} from 'lucide-react';
 import { navTree } from '../data/nav';
+
+const PAGE_ICONS = {
+  overview:   LayoutDashboard,
+  colors:     Palette,
+  gradients:  Layers,
+  typography: Type,
+  spacing:    Ruler,
+  elevation:  Sun,
+  radius:     Squircle,
+  variables:  Braces,
+  buttons:    MousePointerClick,
+  inputs:     TextCursorInput,
+  cards:      CreditCard,
+  tables:     Table,
+};
+
+function ChildBtn({ child, isActive, onNavigate }) {
+  const Icon = PAGE_ICONS[child.id];
+  return (
+    <button
+      onClick={() => onNavigate(child.page)}
+      className={`sidebar-child-btn${isActive ? ' active' : ''}`}
+    >
+      {Icon && <Icon size={13} strokeWidth={1.8} className="sidebar-child-icon" />}
+      {child.label}
+    </button>
+  );
+}
 
 const SECTION_COLORS = {
   foundation: { dot: 'var(--hm-yellow)',        active: 'var(--hm-yellow)' },
@@ -38,17 +71,6 @@ export default function Sidebar({ activePage, onNavigate }) {
         </div>
       </div>
 
-      {/* Search hint */}
-      <div className="sidebar-search">
-        <div className="sidebar-search-inner">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <circle cx="5" cy="5" r="3.5" stroke="#7DBFA8" strokeWidth="1.2"/>
-            <line x1="7.8" y1="7.8" x2="10.5" y2="10.5" stroke="#7DBFA8" strokeWidth="1.2" strokeLinecap="round"/>
-          </svg>
-          토큰 / 컴포넌트 검색
-        </div>
-      </div>
-
       {/* Nav */}
       <nav className="sidebar-nav">
         {navTree.map((item) => {
@@ -62,7 +84,7 @@ export default function Sidebar({ activePage, onNavigate }) {
                 onClick={() => onNavigate(item.page)}
                 className={`sidebar-overview-btn${isActive ? ' active' : ''}`}
               >
-                <span style={{ fontSize: '16px' }}>🏠</span>
+                <LayoutDashboard size={15} strokeWidth={1.8} />
                 <span>개요</span>
               </button>
             );
@@ -80,7 +102,6 @@ export default function Sidebar({ activePage, onNavigate }) {
                 className="sidebar-section-btn"
                 style={{ cursor: 'default' }}
               >
-                <div className="sidebar-section-dot" style={{ '--accent': accent.dot }} />
                 <span className={`sidebar-section-label${sectionActive ? ' active' : ''}`}>
                   {sectionLabel}
                 </span>
@@ -96,13 +117,12 @@ export default function Sidebar({ activePage, onNavigate }) {
                 {item.children.filter(c => !c.hidden).map((child) => {
                   const isActive = activePage === child.page;
                   return (
-                    <button
+                    <ChildBtn
                       key={child.id}
-                      onClick={() => onNavigate(child.page)}
-                      className={`sidebar-child-btn${isActive ? ' active' : ''}`}
-                    >
-                      {child.label}
-                    </button>
+                      child={child}
+                      isActive={isActive}
+                      onNavigate={onNavigate}
+                    />
                   );
                 })}
               </div>

@@ -16,7 +16,7 @@ function ColorSwatch({ token, hex, role, isDefault, darkChip }) {
       className="color-swatch-card"
       onClick={copy}
       title="클릭하여 복사"
-      style={isDefault ? { outline: '2px solid #FFC600', outlineOffset: '2px' } : {}}
+      style={isDefault ? { outline: '2px solid var(--hm-accent-orange)', outlineOffset: '2px' } : {}}
     >
       <div className="color-swatch-chip" style={{ background: chipBg }}>
         {isDefault && (
@@ -193,8 +193,8 @@ export default function Colors() {
       <ColorScaleSection title="Color Scale — Orange (HM Orange)" scaleItems={orangeScale} />
 
       <ColorSection title="Accent — 강조색">
-        <ColorSwatch token="--hm-yellow"        hex="#FFC600" role="Highlight / 강조 전용" />
-        <ColorSwatch token="--hm-accent-orange" hex="#FF5C00" role="강조 액션 전용" />
+        <ColorSwatch token="--hm-accent-orange" hex="#FF5C00" role="강조 전용" />
+        <ColorSwatch token="--hm-yellow"        hex="#FFC600" role="GreenBg 강조 전용" />        
       </ColorSection>
 
       <ColorSection title="Neutral — 중립">
